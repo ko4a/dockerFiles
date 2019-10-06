@@ -1,4 +1,5 @@
-FROM php:7.2.7-fpm
+FROM php:7.3-fpm
+
 
 RUN apt-get update && apt-get install -y \
     git \
@@ -8,7 +9,8 @@ RUN apt-get update && apt-get install -y \
     imagemagick \
     libmagick++-dev \
     libmagickwand-dev \
-    mysql-client \
+    mariadb-client \
+    libzip-dev \
     nano \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
